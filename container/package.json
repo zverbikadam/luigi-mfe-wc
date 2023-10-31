@@ -23,7 +23,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
-    "@luigi-project/core": "^2.7.1",
+    "@luigi-project/core": "2.7.2-dev.202310301736",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

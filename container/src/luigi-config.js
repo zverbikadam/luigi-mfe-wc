@@ -50,6 +50,7 @@ Luigi.setConfig({
     settings: {
         header: {
             title: 'Hello Luigi',
-        }
+        },
+        btpToolLayout: true
     }
 });
