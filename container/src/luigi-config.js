@@ -50,6 +50,8 @@ Luigi.setConfig({
     settings: {
         header: {
             title: 'Hello Luigi',
-        }
+        },
+        responsiveNavigation: 'Fiori3',
+        btpToolLayout: true
     }
 });
