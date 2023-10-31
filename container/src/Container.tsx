@@ -9,10 +9,13 @@ class CoreContainer extends HTMLElement {
     connectedCallback() {
         console.log("Container connected!");
 
-        const root = ReactDOM.createRoot(this);
+        const shadow = this.attachShadow({ mode: 'open' });
+
+        const root = ReactDOM.createRoot(shadow);
 
         root.render(<App />);
     }
 }
 
-customElements.define("core-container", CoreContainer);
+// @ts-ignore
+window.Luigi._registerWebcomponent(new URL(document.currentScript?.getAttribute('src') || '', location.href), CoreContainer);

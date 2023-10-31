@@ -31,4 +31,10 @@ module.exports = {
         modules: [__dirname, "src", "node_modules"],
         extensions: [".js", ".ts", ".jsx", ".tsx", ".json"],
     },
+    devServer: {
+        port: 3000,
+        liveReload: false,
+        hot: false
+    },
+    devtool: "source-map"
 }
