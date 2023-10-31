@@ -1,5 +1,5 @@
 const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: "development",
@@ -22,19 +22,23 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: './public/index.html',
-            inject: false
-        }),
+        new CopyWebpackPlugin(
+            {
+                patterns: [
+                    { context: 'public', to: 'index.html', from: 'index.html' },
+                    { context: 'node_modules/@luigi-project/core', to: './luigi-core', from: "**" }
+                ]
+            },
+            { ignore: ['.gitkeep', '**/.DS_Store', '**/Thumbs.db'], debug: 'warning' }
+        )
     ],
     resolve: {
         modules: [__dirname, "src", "node_modules"],
-        extensions: [".js", ".ts", ".jsx", ".tsx", ".json"],
+        extensions: [".js", ".jsx", ".tsx", ".ts", ".json"],
     },
     devServer: {
         port: 3000,
         liveReload: false,
         hot: false
-    },
-    devtool: "source-map"
+    }
 }

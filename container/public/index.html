@@ -4,9 +4,12 @@
 <head>
     <title>Hello Luigi</title>
     <meta charset="utf-8">
-    <link rel='stylesheet' href='https://unpkg.com/@luigi-project/core/luigi.css'>
-    <script src="https://unpkg.com/@luigi-project/core/luigi.js"></script>
-    <!-- This is the luigi-config that is exposed by webpack (the path is not for the one in the src folder) -->
+    <link rel="stylesheet" href="/luigi-core/luigi.css" />
+    <script id="sap-ui-bootstrap" src="https://ui5.sap.com/resources/sap-ui-core.js" data-sap-ui-theme="sap_horizon"
+        data-sap-ui-resourceroots='{"com.sap.ui5wc": "http://localhost:3002/"}' data-sap-ui-compatVersion="edge" data-sap-ui-async="true"
+        data-sap-ui-frameOptions="trusted"></script>
+    <script src="/luigi-core/luigi.js"></script>
+    <!-- This is the luigi-config that is exposed by webpack (not the one in the src folder) -->
     <script src="/luigi-config.js"></script>
 </head>
 
