@@ -2,7 +2,10 @@
   "name": "html-wc",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "engines": {
+    "node": "^18",
+    "npm": "^9"
+  },
   "scripts": {
     "start": "webpack serve"
   },
