@@ -11,7 +11,7 @@ In each folder (container, react-wc and ui5-wc):
 
 * container is available at http://localhost:3000
 * react-wc is available at http://localhost:3001
-* ui5-wc is available at http://localhost:3002/idex.html
+* ui5-wc is available at http://localhost:3002/index.html
 
 Guide for creating these webcomponents from scratch (no `create-react-app` or similar) is in [docs](/docs/)
 
