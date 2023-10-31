@@ -5,7 +5,7 @@ module.exports = {
     mode: "development",
     entry: {
         "luigi-config": "./src/luigi-config.js",
-        Container: "./src/Container.ts"
+        Container: "./src/Container.tsx"
     },
     output: {
         filename: "[name].js",
@@ -14,7 +14,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(j|t)s?$/,
+                test: /\.(j|t)sx?$/,
                 exclude: /node_modules/,
                 use: ["babel-loader"]
             },
@@ -29,6 +29,6 @@ module.exports = {
     ],
     resolve: {
         modules: [__dirname, "src", "node_modules"],
-        extensions: [".js", ".ts", ".json"],
+        extensions: [".js", ".ts", ".jsx", ".tsx", ".json"],
     },
 }
