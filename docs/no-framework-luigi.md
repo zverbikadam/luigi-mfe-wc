@@ -96,3 +96,65 @@ window.Luigi._registerWebcomponent(new URL(document.currentScript?.getAttribute(
         }
     }
     ```
+
+## Compound Webcomponent
+
+To render nested micro frontend webcomponents in Compound Webcomponent:
+
+* In _Luigi Core's_ component, create `slot` elements, e.g. (`/container.App.tsx`):
+```
+import React from 'react'
+
+const App = () => {
+  return (
+    <>
+      <div>
+        <h3>These are the two Microfrontends rendered simultaneously:</h3>
+      </div>
+      <div>
+        <slot name="mf-1">This is the place for micro frontend 1.</slot>
+      </div>
+      <div>
+        <slot name="mf-2">This is the place for micro frontend 2.</slot>
+      </div>
+    </>
+  )
+}
+
+export default App
+```
+* Then use the `name` properties of these slots inside `luigi-config.js`
+```
+{
+    pathSegment: "compoundWc",
+    label: "Compound WebComponent",
+    viewUrl: "/Container.js",
+    webcomponent: {
+        selfRegistered: true
+    },
+    compound: {
+        children: [
+            {
+                viewUrl: "<path-to-webcomponent-1>",
+                webcomponent: {
+                    tagName: "name-defined-in-customElements.define(...)",
+                    selfRegistered: true,
+                },
+                layoutConfig: {
+                    slot: "mf-1"
+                }
+            },
+            {
+                viewUrl: "<path-to-webcomponent-2>",
+                webcomponent: {
+                    tagName: "name-defined-in-customElements.define(...)",
+                    selfRegistered: true,
+                },
+                layoutConfig: {
+                    slot: "mf-2"
+                }
+            }
+        ]
+    }
+}
+```
