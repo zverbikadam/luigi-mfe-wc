@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: "development",
     entry: {
+        "luigi-config": "./src/luigi-config.js",
         Container: "./src/Container.js"
     },
     output: {
